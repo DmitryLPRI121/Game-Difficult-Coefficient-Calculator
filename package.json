@@ -1,14 +1,25 @@
 {
   "name": "game-difficult-coefficient-calculator",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "game",
+    "difficulty",
+    "coefficient",
+    "calculator",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DmitryLPRI121/Game-Difficult-Coefficient-Calculator"
+  },
+  "author": "the_unshakable_bush",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "typescript": "^5.7.2"
