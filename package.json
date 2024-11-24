@@ -1,6 +1,6 @@
 {
   "name": "game-difficult-coefficient-calculator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "author": "the_unshakable_bush",
   "license": "MIT",
-  "description": "",
+  "description": "A utility to calculate difficulty coefficients for games based on progress and customizable parameters.",
   "devDependencies": {
     "typescript": "^5.7.2"
   }
