@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameDifficultCoefCalculate = void 0;
-const GameDifficultCoefCalculate = (curValue, maxValue = 100, growthFactor = 50, linearCoeff = 0.5, roundTo = 2) => {
+const GameDifficultCoefCalculate = (curValue, maxValue = 100, growthFactor = 1, linearCoeff = 0.5, roundTo = 2) => {
     const RoundToDecimals = (value) => {
         return Math.round(value * 10 ** roundTo) / 10 ** roundTo;
     };

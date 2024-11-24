@@ -1,4 +1,4 @@
-# GameDifficultCoefCalculate
+# Game Difficult Coefficient Calculator
 
 A utility function for calculating the difficulty coefficient in games based on the player's progress and a customizable set of parameters. This function normalizes the current progress and computes a difficulty value using an adjustable growth factor, linear coefficient, and rounding precision.
 
@@ -7,7 +7,7 @@ A utility function for calculating the difficulty coefficient in games based on 
 You can install this package via npm:
 
 ```bash
-npm install game-difficult-coef-calculate
+npm i game-difficult-coefficient-calculator
 ```
 
 ## Usage
@@ -16,17 +16,15 @@ npm install game-difficult-coef-calculate
 
 You can import the function into your project as follows:
 
-```javascript
-const { GameDifficultCoefCalculate } = require('game-difficult-coef-calculate');
-
-// or using ES modules
-import { GameDifficultCoefCalculate } from 'game-difficult-coef-calculate';
+```ES modules
+import { GameDifficultCoefCalculate }
+   from 'game-difficult-coefficient-calculator';
 ```
 
 ### Syntax
 
-```javascript
-GameDifficultCoefCalculate(curValue, maxValue = 100, growthFactor = 50, linearCoeff = 0.5, roundTo = 2)
+```typescript
+GameDifficultCoefCalculate(curValue, maxValue = 100, growthFactor = 1, linearCoeff = 0.5, roundTo = 2)
 ```
 
 ### Parameters
@@ -35,7 +33,7 @@ GameDifficultCoefCalculate(curValue, maxValue = 100, growthFactor = 50, linearCo
 |---------------|----------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `curValue`    | `number` |         | The current progress value (e.g., player's current experience or level).                                                                              |
 | `maxValue`    | `number` | `100`   | The maximum possible value (e.g., maximum experience or level).                                                                                      |
-| `growthFactor`| `number` | `50`    | A scaling factor that adjusts the exponential growth of the difficulty coefficient.                                                                   |
+| `growthFactor`| `number` | `1`    | A scaling factor that adjusts the exponential growth of the difficulty coefficient.                                                                   |
 | `linearCoeff` | `number` | `0.5`   | A linear multiplier applied to the exponential term. Determines how much linear growth influences the difficulty curve.                               |
 | `roundTo`     | `number` | `2`     | The number of decimal places to round the result to.                                                                                                 |
 
@@ -53,15 +51,16 @@ const difficulty1 = GameDifficultCoefCalculate(30);
 console.log(difficulty1); // Output: A calculated difficulty coefficient
 
 // Example 2: Custom parameters
-const difficulty2 = GameDifficultCoefCalculate(75, 150, 100, 0.8, 3);
+const difficulty2 = GameDifficultCoefCalculate(75, 150, 5, 0.8, 3);
 console.log(difficulty2); // Output: A calculated difficulty coefficient with 3 decimal precision
 ```
 
-![Описание изображения](doc/1.png)
-![Описание изображения](doc/2.png)
-![Описание изображения](doc/5.png)
-![Описание изображения](doc/10.png)
-![Описание изображения](doc/25.png)
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px;">
+  <img src="doc/1.png" alt="Описание изображения" style="width: 100%;">
+  <img src="doc/2.png" alt="Описание изображения" style="width: 100%;">
+  <img src="doc/5.png" alt="Описание изображения" style="width: 100%;">
+  <img src="doc/10.png" alt="Описание изображения" style="width: 100%;">
+</div>
 
 ### How It Works
 
@@ -76,8 +75,10 @@ console.log(difficulty2); // Output: A calculated difficulty coefficient with 3 
 The difficulty coefficient is calculated using the following formula:
 
 ```
-difficultyCoefficient = 1 + normalizedExperience * growthFactor
-                       + (Math.exp(growthFactor * normalizedExperience) - 1) * linearCoeff
+difficultyCoefficient =
+   1 + normalizedExperience * growthFactor
+   + (Math.exp(growthFactor * normalizedExperience) - 1)
+   * linearCoeff
 ```
 
 Where:
